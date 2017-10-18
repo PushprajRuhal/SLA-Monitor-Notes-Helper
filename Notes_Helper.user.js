@@ -13,13 +13,16 @@
 
     //style injector
     $.style={
+        stylesheet:null,
         insertRule:function(selector,rules)
         {
-            var context = document,stylesheet;
-            context.getElementsByTagName('head')[0].appendChild(context.createElement('style'));
-            stylesheet=context.styleSheets[context.styleSheets.length-1];
+            if(!this.stylesheet){
+                var context = document,stylesheet;
+                context.getElementsByTagName('head')[0].appendChild(context.createElement('style'));
+                this.stylesheet=context.styleSheets[context.styleSheets.length-1];
+            }
             for(var i=0;i<selector.length;++i){
-                stylesheet.addRule(selector[i], rules);
+                this.stylesheet.addRule(selector[i], rules);
             }
         }
     };
