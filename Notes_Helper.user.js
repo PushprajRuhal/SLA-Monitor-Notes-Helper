@@ -32,6 +32,7 @@
     $.style.insertRule([".popupContent"], ' box-shadow: 0px 0px 20px 5px rgba(0,0,0,.5); user-select: initial; cursor: initial; visibility: hidden;  color:initial;   border-radius: 4px;  padding: 2px; background-color: #555;  min-width:3400%; left:-2000%;  position: absolute; z-index: 10000; bottom: 130%;');
     $.style.insertRule([".popupContent .cellstyle td"], 'background-color: #ffffb8; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); line-height: normal;');
     $.style.insertRule([".popupContent > .box"], 'margin-bottom:auto !important;');
+    $.style.insertRule([".popupContent table"], 'width:100%;');
 
     $.style.insertRule([".loadingNotes"], 'color:red;float:right;');
 
