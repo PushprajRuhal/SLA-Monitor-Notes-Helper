@@ -39,8 +39,7 @@
 
     $.style.insertRule([".loadingNotes"], 'color:red;float:right;');
 
-    $.style.insertRule(["@-webkit-keyframes fadeIn"],'from {opacity: 0;} to {opacity: 1;}');
-    $.style.insertRule(["@keyframes fadeIn"],'from {opacity: 0;} to {opacity: 1;}');
+    $.style.insertRule(["@-webkit-keyframes fadeIn", "@keyframes fadeIn"],'from {opacity: 0;} to {opacity: 1;}');
 
     $.style.insertRule(["#container > div"],'overflow:initial !important;');
 
