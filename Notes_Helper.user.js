@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Notes helper
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Bring customer notes to the SLA monitor page
 // @author       Pushpraj
 // @match        https://support.sitecore.net/dashboard/Pages/SLAmonitor.aspx*
