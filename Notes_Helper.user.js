@@ -60,14 +60,14 @@
         });
     };
 
-    //get uniques account urls
+    //get account urls
     var accountUrls = [];
-    $.each($.unique($("div[style='background: #F3E6A9;'] > a")) ,function( index, value ) {
+    $.each($("div[style='background: #F3E6A9;'] > a"), function( index, value ) {
         accountUrls.push(value.href);
         $(value).append("<div class='tooltipHover loadingNotes'>...</div>");
     });
 
-    //fetch notes info for each account
+    //fetch notes info for each unique account
     $.each($.unique(accountUrls) ,function( index, url ) {
         var itemKey = "notes_" + url;
 
