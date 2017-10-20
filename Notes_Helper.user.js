@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Notes helper
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Bring customer notes to the SLA monitor page
 // @author       Pushpraj
 // @match        https://support.sitecore.net/dashboard/Pages/SLAmonitor.aspx*
@@ -12,7 +12,7 @@
     'use strict';
 
     //style injector
-    $.style={
+    $.customStyle={
         stylesheet:null,
         insertRule:function(selector,rules)
         {
@@ -28,20 +28,20 @@
     };
 
     //styles
-    $.style.insertRule([".popup"], 'position: relative; display: inline-block; cursor: pointer; user-select: none; float:right;color:red;');
-    $.style.insertRule([".popup .popupContent::after"], 'content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #555 transparent transparent transparent;');
-    $.style.insertRule([".popup:hover .popupContent"], 'visibility: visible; -webkit-animation: fadeIn .5s; animation: fadeIn .5s;');
+    $.customStyle.insertRule([".popup"], 'position: relative; display: inline-block; cursor: pointer; user-select: none; float:right;color:red;');
+    $.customStyle.insertRule([".popup .popupContent::after"], 'content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #555 transparent transparent transparent;');
+    $.customStyle.insertRule([".popup:hover .popupContent"], 'visibility: visible; -webkit-animation: fadeIn .5s; animation: fadeIn .5s;');
 
-    $.style.insertRule([".popupContent"], ' box-shadow: 0px 0px 20px 5px rgba(0,0,0,.5); user-select: initial; cursor: initial; visibility: hidden;  color:initial;   border-radius: 4px;  padding: 2px; background-color: #555;  min-width:3400%; left:-2000%;  position: absolute; z-index: 10000; bottom: 130%;');
-    $.style.insertRule([".popupContent .cellstyle td"], 'background-color: #ffffb8; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); line-height: normal;');
-    $.style.insertRule([".popupContent > .box"], 'margin-bottom:auto !important;');
-    $.style.insertRule([".popupContent table"], 'width:100%;');
+    $.customStyle.insertRule([".popupContent"], ' box-shadow: 0px 0px 20px 5px rgba(0,0,0,.5); user-select: initial; cursor: initial; visibility: hidden;  color:initial;   border-radius: 4px;  padding: 2px; background-color: #555;  min-width:3400%; left:-2000%;  position: absolute; z-index: 10000; bottom: 130%;');
+    $.customStyle.insertRule([".popupContent .cellstyle td"], 'background-color: #ffffb8; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); line-height: normal;');
+    $.customStyle.insertRule([".popupContent > .box"], 'margin-bottom:auto !important;');
+    $.customStyle.insertRule([".popupContent table"], 'width:100%;');
 
-    $.style.insertRule([".loadingNotes"], 'color:red;float:right;');
+    $.customStyle.insertRule([".loadingNotes"], 'color:red;float:right;');
 
-    $.style.insertRule(["@-webkit-keyframes fadeIn", "@keyframes fadeIn"],'from {opacity: 0;} to {opacity: 1;}');
+    $.customStyle.insertRule(["@-webkit-keyframes fadeIn", "@keyframes fadeIn"],'from {opacity: 0;} to {opacity: 1;}');
 
-    $.style.insertRule(["#container > div"],'overflow:initial !important;');
+    $.customStyle.insertRule(["#container > div"],'overflow:initial !important;');
 
     //placeholders
     var popupPre = "<div class='popup'>Notes!<div class='popupContent'>";
